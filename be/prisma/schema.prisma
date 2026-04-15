@@ -1,0 +1,13 @@
+
+generator client {
+  provider = "prisma-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==========================================
+// THIẾT KẾ BẢNG: QUẢN TRỊ DANH MỤC (MASTER DATA)
+// ==========================================

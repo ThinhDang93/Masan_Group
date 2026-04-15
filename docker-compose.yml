@@ -1,0 +1,19 @@
+services:
+  db:
+    # Tận dụng lại image postgres có sẵn trên máy (hoặc sẽ tự tải bản alpine nhẹ nhất nếu chưa có)
+    image: postgres:16
+    container_name: qlns_db # Tên container mới riêng biệt cho đồ án
+    restart: always
+    environment:
+      POSTGRES_USER: admin_qlns
+      POSTGRES_PASSWORD: Z/lhN8xY;£G2=0vv(?W{5o*#Bk%7h(tjz1Cwc
+      POSTGRES_DB: qlns_db # Tên database sẽ tự động tạo
+    ports:
+      # Map cổng máy thật (5435) vào cổng container (5432) để tránh đụng độ với container cũ
+      - "5435:5432"
+    volumes:
+      # Ánh xạ dữ liệu ra ngoài để không bị mất khi xóa container
+      - qlns_db:/var/lib/postgresql/data
+
+volumes:
+  qlns_db:
