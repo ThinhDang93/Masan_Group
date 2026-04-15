@@ -4,7 +4,7 @@ import { Button, Dropdown, type MenuProps, Avatar } from "antd";
 import { DownOutlined, UserOutlined, LogoutOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { type RootState } from "../redux/store";
-import { logout, login } from "../redux/authSlice"; // Import login tạm để test
+import { logout } from "../redux/authSlice";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();

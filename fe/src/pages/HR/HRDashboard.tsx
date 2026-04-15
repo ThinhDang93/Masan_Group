@@ -4,7 +4,7 @@ import { ExportOutlined } from "@ant-design/icons";
 
 type Props = {};
 
-const HRDashboard: React.FC<Props> = (props) => {
+const HRDashboard: React.FC<Props> = () => {
   // Thay thế URL này bằng link thực tế của trang chứa biểu đồ Data Mining của team bạn
   const dashboardUrl =
     "https://app.powerbi.com/groups/me/reports/5d848aae-7a95-43a7-926c-d99561265437/81986bb86970e0305813?ctid=2dff09ac-2b3b-4182-9953-2b548e0d0b39&experience=power-bi";

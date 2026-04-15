@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
-const Page404: React.FC<Props> = (props) => {
+const Page404: React.FC<Props> = () => {
   const navigate = useNavigate();
 
   return (

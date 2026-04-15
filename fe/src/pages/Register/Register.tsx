@@ -1,8 +1,6 @@
-import React from "react";
-
 type Props = {};
 
-const Register = (props: Props) => {
+const Register = (_props: Props) => {
   return <div>Register</div>;
 };
 

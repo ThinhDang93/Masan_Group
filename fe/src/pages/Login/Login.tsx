@@ -38,7 +38,7 @@ export const User: UserInfo[] = [
   },
 ];
 
-const Login: React.FC<Props> = (props) => {
+const Login: React.FC<Props> = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
