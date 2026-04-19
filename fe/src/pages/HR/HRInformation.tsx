@@ -8,9 +8,11 @@ import {
   Typography,
   Row,
   Col,
+  Button,
 } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import { SearchOutlined } from "@ant-design/icons";
+import { SearchOutlined, EditOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
 
@@ -67,6 +69,7 @@ const GENDER_OPTIONS = ["Male", "Female"];
 const TYPES_OPTIONS = ["Full-time", "Contractor"];
 
 const HRInformation: React.FC = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [filterBU, setFilterBU] = useState<string | null>(null);
   const [filterStatus, setFilterStatus] = useState<string | null>(null);
@@ -243,6 +246,25 @@ const HRInformation: React.FC = () => {
         <Tag color={val === "Active" ? "green" : "default"}>{val}</Tag>
       ),
       sorter: (a, b) => a.Status.localeCompare(b.Status),
+    },
+    {
+      title: "Thao tác",
+      key: "action",
+      fixed: "right",
+      width: 110,
+      render: (_: unknown, record: Employee) => (
+        <Button
+          type="primary"
+          size="small"
+          icon={<EditOutlined />}
+          style={{ background: "#DA251D", borderColor: "#DA251D" }}
+          onClick={() =>
+            navigate(`/hr/information/${record.Employee_ID}`, { state: record })
+          }
+        >
+          Cập nhật
+        </Button>
+      ),
     },
   ];
 

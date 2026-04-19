@@ -6,10 +6,10 @@ interface AuthState {
   user: UserInfo | null;
 }
 
-const initialState: AuthState = {
-  isAuthenticated: false,
-  user: null,
-};
+const saved = localStorage.getItem("masanhr_user");
+const initialState: AuthState = saved
+  ? { isAuthenticated: true, user: JSON.parse(saved) }
+  : { isAuthenticated: false, user: null };
 
 const authSlice = createSlice({
   name: "auth",

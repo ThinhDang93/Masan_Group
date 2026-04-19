@@ -35,7 +35,9 @@ const Header: React.FC = () => {
       icon: <LogoutOutlined />,
       danger: true,
       onClick: () => {
-        (dispatch(logout()), navigate("/loginwithlove"));
+        localStorage.removeItem("masanhr_user");
+        dispatch(logout());
+        navigate("/loginwithlove");
       },
     },
   ];

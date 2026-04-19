@@ -77,6 +77,7 @@ const Login: React.FC<Props> = () => {
           const { passWord, ...userPayload } = matchedUser;
 
           // Dispatch action lưu toàn bộ thông tin user vào Redux (sẵn sàng cho component DetailUser)
+          localStorage.setItem("masanhr_user", JSON.stringify(userPayload));
           dispatch(login(userPayload));
 
           // Điều hướng dựa trên role (ví dụ: 'user' thì vào trang Detail, admin thì vào Dashboard)
@@ -143,7 +144,7 @@ const Login: React.FC<Props> = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-2">Đăng nhập</h2>
             <p className="text-gray-500">
               Sử dụng tài khoản <span className="font-semibold">admin01</span>{" "}
-              hoặc <span className="font-semibold">eployee01</span> để thử
+              hoặc <span className="font-semibold">employee01</span> để thử
               nghiệm.
             </p>
           </div>
