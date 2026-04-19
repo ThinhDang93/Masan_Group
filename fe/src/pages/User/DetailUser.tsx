@@ -317,7 +317,9 @@ const DetailUser: React.FC = () => {
   const tabs: { key: typeof activeTab; label: string }[] = [
     { key: "personal", label: "Cá nhân" },
     { key: "work", label: "Công việc" },
-    { key: "analytics", label: "HR Analytics" },
+    ...(reduxUser?.role === "administrator"
+      ? [{ key: "analytics" as const, label: "HR Analytics" }]
+      : []),
   ];
 
   return (
